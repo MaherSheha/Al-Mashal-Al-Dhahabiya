@@ -7,6 +7,7 @@ import { Expertise } from './components/Expertise';
 import { Partners } from './components/Partners';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { WhatsAppButton } from './components/WhatsAppButton';
 import { LanguageProvider } from './contexts/LanguageContext';
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Contact />
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </LanguageProvider>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Footer: React.FC = () => {
@@ -26,13 +26,6 @@ export const Footer: React.FC = () => {
             <p className="text-slate-400 leading-relaxed mb-6 text-sm">
               {t.footer.description}
             </p>
-            <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-gold-500 hover:text-slate-900 transition-all">
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Quick Links */}

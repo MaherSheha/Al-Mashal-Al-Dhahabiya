@@ -68,17 +68,27 @@ export const Contact: React.FC = () => {
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.name}</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.name}</label>
                   <input 
+                    id="name"
+                    name="name"
                     type="text" 
+                    autoComplete="name"
+                    required
+                    aria-required="true"
                     className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all"
                     placeholder={dir === 'ltr' ? "John Doe" : "الاسم"}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.phone}</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.phone}</label>
                   <input 
+                    id="phone"
+                    name="phone"
                     type="tel" 
+                    autoComplete="tel"
+                    required
+                    aria-required="true"
                     className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all text-left"
                     dir="ltr"
                     placeholder="+966..."
@@ -87,9 +97,14 @@ export const Contact: React.FC = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.email}</label>
+                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.email}</label>
                 <input 
+                  id="email"
+                  name="email"
                   type="email" 
+                  autoComplete="email"
+                  required
+                  aria-required="true"
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all text-left"
                   dir="ltr"
                   placeholder="john@example.com"
@@ -97,18 +112,26 @@ export const Contact: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.service}</label>
-                <select className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all bg-white">
+                <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.service}</label>
+                <select 
+                  id="service"
+                  name="service"
+                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all bg-white"
+                >
                   {t.contact.form.serviceOptions.map((option, i) => (
-                    <option key={i}>{option}</option>
+                    <option key={i} value={option}>{option}</option>
                   ))}
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.message}</label>
+                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">{t.contact.form.message}</label>
                 <textarea 
+                  id="message"
+                  name="message"
                   rows={4} 
+                  required
+                  aria-required="true"
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all resize-none"
                   placeholder={dir === 'ltr' ? "Tell us about your project..." : "أخبرنا عن مشروعك..."}
                 ></textarea>
@@ -116,7 +139,7 @@ export const Contact: React.FC = () => {
 
               <button 
                 type="submit" 
-                className="w-full bg-slate-900 text-white font-bold py-4 rounded-lg hover:bg-gold-500 hover:text-slate-900 transition-all duration-300 shadow-lg"
+                className="w-full bg-slate-900 text-white font-bold py-4 rounded-lg hover:bg-gold-500 hover:text-slate-900 transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2"
               >
                 {t.contact.form.submit}
               </button>
